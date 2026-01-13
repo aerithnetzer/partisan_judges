@@ -149,10 +149,19 @@ def main(args):
     #         dtype={"speech_id": object},
     #     )
     # rename text column if different from text
-    with open("./test.txt", "r") as f:
-        text = str(f.read())
+    texts = []
+    years = []
+    courts = []
+    import glob
+    files = glob.glob("./data/*.txt")
+    for file in files: 
+        with open(file, "r") as f:
+            text = str(f.read())
+        texts.append(text)
+        years.append(2020)
+        courts.append("nc")
 
-    df = pd.DataFrame({"court": ["nc"], "year": ["2018"], "text": [text]})
+    df = pd.DataFrame({"court": courts, "year": years, "text": texts})
     if args.text_column != "text":
         df.rename(columns={args.text_column: "text"}, inplace=True)
     df["text"] = df["text"].astype(str)
