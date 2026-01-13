@@ -1,5 +1,10 @@
 # partisan_judges
 
+How to run
+
+`partisan_judges main ✗ uv run partisan_judges/sbert-test.py --model_name_or_path sentence-transformers/all-MiniLM-L6-v2 --evidence_le
+xicon ./evidence_lexicon.csv --intuition_lexicon ./intuition_lexicon.csv --output myout.csv`
+
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
