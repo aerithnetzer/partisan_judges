@@ -1,0 +1,2 @@
+length,tokens_top100,fraction_top100,avg_evidence_score,avg_intuition_score,length_bin,evidence_mean,evidence_adj,intuition_mean,intuition_adj
+3411,1007,0.2952213427147464,0.05831227,0.005109722,"(3410, 3420]",0.05831227,0.0,0.005109722,0.0
