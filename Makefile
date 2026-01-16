@@ -15,6 +15,7 @@ PYTHON_INTERPRETER = python
 .PHONY: requirements
 requirements:
 	uv sync
+	@echo ">>> Python dependencies installed."
 	
 
 
@@ -61,7 +62,7 @@ create_environment:
 ## Make dataset
 .PHONY: data
 data: requirements
-	$(PYTHON_INTERPRETER) partisan_judges/dataset.py
+	 uv run partisan_judges/dataset.py
 
 
 #################################################################################

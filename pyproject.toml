@@ -1,25 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+ 
 [project]
-name = "partisan-judges"
+name = "partisan_judges"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "bootstrapped>=0.0.2",
+    "dotenv>=0.9.9",
     "loguru>=0.7.3",
     "pandarallel>=1.6.5",
     "pandas>=2.3.3",
     "scipy>=1.16.3",
-    "sentence-transformers>=5.2.0",
     "tqdm>=4.67.1",
     "typer>=0.21.1",
     "wordfreq>=3.1.1",
 ]
-
+ 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["partisan_judges*"]
+exclude = ["data*", "models*", "reports*", "notebooks*", "references*"]
+ 
 [dependency-groups]
 dev = [
-    "partisan-judges",
+    "pytest>=8.0.0",
+    "ruff>=0.8.0",
+    "ipython>=8.0.0",
 ]
-
+ 
 [tool.uv.sources]
 partisan-judges = { workspace = true }
